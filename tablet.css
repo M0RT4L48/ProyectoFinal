@@ -1,0 +1,148 @@
+@media screen and (max-width: 768px) {
+    .redes_sociales{
+        display: none;
+    }
+    .titulo_PT{
+        display: flex;    
+    }
+    .contactoinicial{
+        display: none;
+    }
+    header {
+        padding: 10px 0;
+    }
+    nav {
+        display: none; /* Oculta menú de escritorio */
+    }
+    .IconoBar {
+        display: block; /* Muestra el ícono hamburguesa */
+    }
+    .nav-menu {
+        display: none;
+        background-color: white;
+        position: absolute;
+        top: 140px;
+        left: 0;
+        width: 100%;
+        z-index: 100;
+        padding: 10px 20px;
+        border: 1px red solid;
+    }
+    .nav-menu ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .nav-menu ul a {
+        border-bottom: 1px dotted var(--color-black);
+        padding: 10px 0;
+    }
+
+
+
+    .informacion{
+        width: 750px;
+        left: 50%;
+    }
+    .infogaleria{
+       margin-right: 250px;
+       text-align: left;
+    }
+    .contenedorgaleria {
+        flex-direction: column;
+        /* border: 1px red solid; */
+        align-items: center;
+    }
+    .fotos{
+        max-width: 768px;
+    }
+    .galeria{
+        height: 1500px;
+    }
+    .WP_Sec{
+        flex-direction: column;
+    }
+
+    .P5 h3{
+        color: #279e64;
+        font-weight: 700;
+        margin: 10px 0px;
+    }
+    
+    .P5 h1{
+        line-height: 1.2;
+        font-size: 40px;
+        padding-bottom: 10px;
+        color: #13287d;
+    }
+    .P5_team{
+        height: 2000px;
+    }
+    .P5_cont_tarjeta{
+        flex-direction: column;
+    }
+    .P4 {
+        flex-direction: column; 
+        width: 100%; 
+        text-align: center;
+    }
+
+    .P4 article {
+        width: 100%; 
+        margin-bottom: 20px; 
+    }
+
+    .WCU_Cont3 {
+        flex-direction: column; 
+        align-items: center;
+    }
+
+    .WCU_icons i {
+        margin: 20px 0; 
+        font-size: 40px; 
+    }
+
+    .info1 h1 {
+        font-size: 30px; 
+    }
+
+    .info1 button {
+        padding: 12px 30px;
+        font-size: 16px; 
+    }
+
+    .servicios{
+        flex-direction: column;
+    }
+    .servicios i{
+        top: 350px;
+    }
+    .P10 {
+        max-width: 100%;
+        padding: 20px;
+    }
+    .carousel {
+        flex-direction: column;
+    }
+    #slide-container {
+        flex-direction: column;
+    }
+    .raya1 {
+        position: static;
+    }
+    
+    .arrow{
+        display: none;
+    }
+    .raya2{
+        display: none;
+    }
+    .footer{
+        height: 600px;
+    }
+
+    .ancla {
+        top: 95%;
+        left: 80%;
+        
+    }
+}

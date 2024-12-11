@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <script src="https://kit.fontawesome.com/725c679a77.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="responsiveslides.min.js"></script>
+    <link rel="stylesheet" href="fancybox.css">
+    <script src="fancybox.js"></script> 
+    <link rel="stylesheet" href="animate.css">
+    <script src="https://m0rt4l48.github.io/Maquetacion-Animaciones-Slide-de-fotos-Galeria-de-Fotos/wow.min.js"></script>
+    <link rel="stylesheet" href="carrousel.css">
+    <link rel="stylesheet" href="phone.css">
+    <link rel="stylesheet" href="tablet.css">
+
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- boton para ir a inicio -->
+    <div class="ancla">
+        <ul>
+            <li><a href="#top" id="scrollToTop" class="scroll-link">↑</a></li>
+        </ul>
+    </div>
+<!-- ------------------menu e info-------------------- -->
+<header>
+    <section id="top" class="ancho info_inicial">
+        <p class="titulo_PT">DREAMIT</p>
+        <div class="contactoinicial">
+            <p><i class="fa-regular fa-envelope"></i> info@example.com</p>
+            <p><i class="fa-solid fa-location-dot"></i> 1st Floor New World</p>
+            <p><i class="fa-solid fa-phone"></i> +880 320 432 242</p>
+        </div>
+
+        <a href="#" class="IconoBar" id="btnmenu">
+            <i class="fa-solid fa-bars fa-2xl"></i>
+        </a>
+
+        <!-- Menú para dispositivos móviles -->
+        <div class="nav-menu" id="menu">
+            <ul>
+                <li><a href="#AOC">About</a></li>
+                <li><a href="#WWD">What WE?</a></li>
+                <li><a href="#Blog">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+
+
+        <div class="redes_sociales">
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-dribbble"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+    </section>
+</header>
+
+<!-- Menú principal para escritorio -->
+<nav>
+    <div class="logo">
+        <img src="img/LogoColorido_Dreamit.png" alt="Logo">
+    </div>
+    <div class="menu">
+        <div class="submenu-container">
+            <a href="home" id="home-link">Home</a>
+            <ul class="submenu">
+                <li><a href="#WCU">Why Choose</a></li>
+                <li><a href="#OET">Experience</a></li>
+                <li><a href="#WP">Process</a></li>
+            </ul>
+        </div>
+        <a href="#AOC">About</a>
+        <a href="#WWD">What WE?</a>
+        <a href="#Service">Services</a>
+        <a href="#Blog">Blog</a>
+        <a href="#contact">Contact</a>
+        <a href="#">Get A Quote</a>
+    </div>
+</nav>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const homeLink = document.getElementById("home-link");
+        const submenuContainer = homeLink.parentElement;
+
+        // Alternar el submenú al hacer clic en Home
+        homeLink.addEventListener("click", (event) => {
+            event.preventDefault();
+            submenuContainer.classList.toggle("active");
+        });
+
+        // Cierra el submenú si se hace clic fuera
+        document.addEventListener("click", (event) => {
+            if (!submenuContainer.contains(event.target)) {
+                submenuContainer.classList.remove("active");
+            }
+        });
+    });
+</script>
+
+
+
+<!-- ------------------informacion principal con imagenes-------------------- -->
+
+<section id="home" class="slidefotos">
+        
+    <ul class="rslides">
+        <li><img src="img/slider-1.jpg" alt=""></li>
+        <li><img src="img/slider-2.jpg" alt=""></li>
+        <li><img src="img/slider-3.png" alt=""></li>
+    </ul>
+    <div class="informacion">
+        <h3>WE ARE DREAMIT</h3>
+        <h1>Best Cleaning Service In The World</h1>
+        <p>Our best-in-class WordPress solution, with additional optimization to make running aWooCommerce online storer.</p>
+        <div>
+            <button  class="TOS">Take Our Service > </button>
+            <button id="abrir-modal" class="Play animate__animated animate__pulse animate__infinite" href="#"><i class="fa-regular fa-circle-play fa-2xl"></i></button>
+        </div>
+    </div>
+</section>
+<script>
+    $(function() {
+      $(".rslides").responsiveSlides();
+    });
+  </script>
+<div class="anuncio" id="modal">
+    <div>
+        <figure class="btn_video">
+           <a href="#"> <i class="fa-solid fa-circle-xmark fa-beat" id="cerrar-modal"></i> </a>
+        </figure>
+    <h2>NUESTRO NUEVO JUGUETE PARA LOS TRABAJOS MAS DIFICILES</h2>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos saepe aspernatur tempora officia perspiciatis ducimus, aliquam facilis voluptatum delectus cum odit deserunt eum eius quae provident quis maxime explicabo! Magni earum temporibus distinctio sunt dolore aspernatur eligendi! Eius eum distinctio dolores velit minima a, quibusdam autem non. Recusandae, cumque delectus!</p>
+    <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/m_EigljWUoY" title="Dyson V15s Detect Submarine" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    </div>
+</div>
+<script>
+
+    $("#abrir-modal").click(function(){
+        $("#modal").addClass("mostrar");
+    })
+
+    $("#cerrar-modal").click(function(){
+        $("#modal").removeClass("mostrar");
+    })
+
+    //por tiempo 5 seg
+    function tiempo() {
+        $("#modal").addClass("mostrar")
+    }
+    setTimeout(tiempo, 5000);
+
+
+    //clicl por fuera
+    window.onclick = function (event){
+        if (event.target == modal){
+            $("#modal").removeClass("mostrar");
+        }
+    }
+</script>
+
+
+
+<!-- ------------------About Our Company-------------------- -->
+
+<article id="AOC" class="P2 ancho">
+    <figure class="image-cont">
+        <img src="img/About_Our_Company.png" alt="">
+        <div class="experience animate__animated animate__shakeY animate__infinite animate__slow" >
+            <p><span>10+</span> <br>Years <br> Experience</p>
+        </div>
+    </figure>
+
+    <section>
+        <i class="escoba fa-solid fa-broom" style="color: #279e64;"></i>
+        <h3>ABOUT OUR COMPANY</h3>
+        <h1>We Are The Best Cleaning Services <span class="green">Provider</span></h1>
+        <p>Our mission is not only to meet your expectations but to exceed them, we also provide many more like condos and apartment cleaning. Our unique 22-Step Healthy Touch Deep Cleaning System</p>
+        <br>
+        <div class="cont_MC">
+        <div class="misions">
+            <p>The housekeepers we hired are professionals who take pride in doing excellent work and in exceeding expectations.</p> <br>
+            <p>We carefully screen all of our cleaners, so you can rest assured that your home would receive the absolute highest quality.</p> <br>
+            <p>Your time is precious, and we understand that cleaning is really just one more item on your to-do list.</p> <br>
+        </div>
+        <div class="check">
+            <i class="fa-regular fa-circle-check"></i>
+            <i class="fa-regular fa-circle-check"></i>
+            <i class="fa-regular fa-circle-check"></i>
+        </div>
+    </div>
+        <button class="animate__animated animate__pulse animate__infinite">More Details</button>
+    </section>
+</article>
+
+<!-- ------------------What we do?-------------------- -->
+<div id="WWD" class="contenedor_WWD">
+    <div class="P3 ancho">
+        <i class="escoba fa-solid fa-broom" style="color: #279e64;"></i>
+        <h3> _ WHAT WE DO? _</h3>
+        <h1>We Work Many Fields To Clean
+            Your Surrounding Area</h1>
+    </div>
+    <article class="servicios ancho">
+        <section>
+            <div class="cont_foto_serv">
+                <img src="img/Servicio1.jpg" alt="">
+            </div>
+
+
+            <div class="cont_info_serv">
+                <div class="servicio_titulo">
+                    <h2>Kitchen Cleaning</h2>
+                    <hr>
+                </div>
+                <div class="servicio_info">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore</p>
+                </div>
+                <div class="servicio_btn">
+                    <button>Read More</button>
+                </div>
+                <div class="icono-contener">
+                    <i class="wow animate__animated animate__flip fa-solid fa-house-circle-check" style="color: #279e64;"></i>
+                  </div>                  
+            </div>
+        </section>
+
+
+        <section>
+            <div class="cont_foto_serv">
+                <img src="img/Servicio2.jpg" alt="">
+            </div>
+            <div class="cont_info_serv">
+                <div class="servicio_titulo">
+                    <h2>Glass Cleaning</h2>
+                    <hr>
+                </div>
+                <div class="servicio_info">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore</p>
+                </div>
+                <div class="servicio_btn">
+                    <button>Read More</button>
+                </div>
+                <div class="icono-contener">
+                    <i class="wow animate__animated animate__flip fa-solid fa-brush" style="color: #279e64;"></i>
+                    
+                  </div>                  
+            </div>
+        </section>
+
+        <section>
+            <div class="cont_foto_serv">
+                <img src="img/Servicio3.jpg" alt="">
+            </div>
+            <div class="cont_info_serv">
+                <div class="servicio_titulo">
+                    <h2>House Cleaning</h2>
+                    <hr>
+                </div>
+                <div class="servicio_info">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore</p>
+                </div>
+                <div class="servicio_btn">
+                    <button>Read More</button>
+                </div>
+                <div class="icono-contener">
+                    <i class="wow animate__animated animate__flip fa-solid fa-hourglass-half" style="color: #279e64;"></i>
+                  </div>                  
+            </div>
+        </section>
+    </article>
+</div>
+
+<!-- ------------------Why Choose Us-------------------- -->
+<section id="WCU" class="cont_P4">
+<div class="P4 ancho">
+
+    <article class="info1">
+        <i class="escoba fa-solid fa-broom" style="color: #279e64;"></i>
+        <h3>WHY CHOOSE US</h3>
+        <h1>Why You Choose Our <span class="green">Services</span></h1>
+        <p>Now you can host more parties and rely on our cleaners to do all the hard work for you. At the Denver Cleaning Service Company we show your home some TLC because we carel</p> <br>
+        <p>We carefully screen all of our cleaners, so you can rest assured that your home.</p>
+
+        <br>
+        <button>Read More</button>
+    </article>
+
+    <article class="">
+        <img src="img/Choose-Us.jpg" alt="">
+    </article>
+
+    <article class="WCU_Cont3">
+        <div class="WCU_list">
+            <h2>24/7 Unlimited Support</h2>
+            <p>Our agency can only be as strong as our people & because of this, our team have designed....</p>
+                <br>
+            <h2>We Are Committed</h2>
+            <p>Our agency can only be as strong as our people & because of this, our team have designed....</p>
+                <br>
+            <h2>Customer Focused Reviews</h2>
+            <p>Our agency can only be as strong as our people & because of this, our team have designed....</p>
+        </div>
+
+        <div class="WCU_icons">
+            <i class="fa-solid fa-clock-rotate-left fa-flip-horizontal" style="color: #279e64;"></i>
+            <i class="fa-regular fa-handshake" style="color: #279e64;"></i>
+            <i class="fa-solid fa-medal" style="color: #279e64;"></i>
+        </div>
+    </article>
+</div>
+</section>
+
+<!-- ------------------Our Experienced Team-------------------- -->
+<div id="OET" class="cont_P5">
+<section class="P5 ancho">
+    <article class="P5_titulo">
+        <h3>Why Choose Us</h3>
+        <h1>Our Experienced Team</h1>
+    </article>
+    <div class="P5_info">
+        <p>Now you can host more parties and rely on our cleaners to do all
+            the hard work for you. At Cleaning Service Company we your home
+            some TLC because we carel</p>
+    </div>
+</section>
+</div>
+
+
+<figure class="P5_team">
+    <div class="P5_cont_tarjeta">
+    <section class="tarjeta_team">
+        <div class="img1">
+        <img src="img/elemento1.jpg" alt="">
+        
+        <div class="redes_sociales_team">
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-dribbble"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+
+        </div>
+        <h3>Elements Name</h3>
+        <p>WEB DEVELOPER</p>
+    </section>
+
+    <section class="tarjeta_team">
+        <div class="img1">
+        <img src="img/elemento2.jpg" alt="">
+        
+        <div class="redes_sociales_team">
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-dribbble"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+
+        </div>
+        <h3>Elements Name</h3>
+        <p>WEB DEVELOPER</p>
+    </section>
+    
+    <section class="tarjeta_team">
+        <div class="img1">
+        <img src="img/elemento3.jpg" alt="">
+        <div class="redes_sociales_team">
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-dribbble"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+
+        </div>
+        <h3>Elements Name</h3>
+        <p>WEB DEVELOPER</p>
+    </section>
+</div>
+</figure>
+
+<!-- ------------------WORK PROCESS-------------------- -->
+
+<div id="WP" class="P6 ancho">
+    <i class="escoba fa-solid fa-broom" style="color: #279e64;"></i>
+    <h3>WORK PROCESS</h3>
+    <h1>Some Easy Steps</h1>
+    <h1>To Clean Your Asset.</h1>
+</div>
+
+
+<article class="WP_Sec ancho">
+    <section>
+        <h1>1</h1>
+        <h4>Easy Online Booking</h4>
+        <hr>
+        <p>As a app web crawler expert, I help
+            organizations adjust to the expanding
+            significance of internet.</p>
+    </section>
+    <section>
+        <h1>2</h1>
+        <h4>Get a cleaner</h4>
+        <hr>
+        <p>As a app web crawler expert, I help
+            organizations adjust to the expanding
+            significance of internet.</p>
+    </section>
+    <section>
+        <h1>3</h1>
+        <h4>Easy Online Booking</h4>
+        <hr>
+        <p>As a app web crawler expert, I help
+            organizations adjust to the expanding
+            significance of internet.</p>
+    </section>
+</article>
+
+
+<!-- ------------------Estadisticas de la empresa-------------------- -->
+<div class="cont_P7 parrallax">
+<section class="P7 ancho">
+    <article>
+        <i class="fa-solid fa-briefcase"></i>
+        <p>10K <br> <span>Project Done</span></p>
+    </article>
+    <article>
+        <i class="fa-solid fa-user-group"></i>
+        <p>1050+ <br> <span>Happy Clients</span></p>
+    </article>
+    <article>
+        <i class="fa-solid fa-trophy"></i>
+        <p>50K <br> <span>Award Winner</span></p>
+    </article>
+    <article>
+        <i class="fa-solid fa-stopwatch"></i>
+        <p>100K <br> <span>Running Project</span></p>
+    </article>
+</section>
+</div>
+<!-- ------------------Pricing Package Galery-------------------- -->
+<section id="Service" class="P8 ancho">
+    <i class="escoba fa-solid fa-broom" style="color: #279e64;"></i>
+    <h3>PRICING PACKAGE</h3>
+    <h1>We Are The Best Team For You!</h1>
+</section>
+
+ <section class="galeria">
+    <div class="contenedorgaleria animate__animated animate__bounceInLeft wow">
+        <figure class="fotos">
+            <div class="galeria1">
+                <a href="img/Galeria1.jpg" data-fancybox="gallery" data-caption="Caption #1">
+            <img src="img/Galeria1.jpg" alt="">
+            </a>
+            </div>
+            <div class="galeria2">  
+                <a href="img/Galeria2.jpg" data-fancybox="gallery" data-caption="Caption #1">
+                <img src="img/Galeria2.jpg" alt="">
+                </a>
+            </div>
+            <div class="galeria3"> 
+                <a href="img/Galeria3.jpg" data-fancybox="gallery" data-caption="Caption #1">
+                <img src="img/Galeria3.jpg" alt="">
+            </a>
+            </div>
+            <div class="galeria4">
+                <a href="img/Galeria4.jpg" data-fancybox="gallery" data-caption="Caption #1">
+                <img src="img/Galeria4.jpg" alt="">
+            </a>
+            </div>
+        </figure>
+        <section class="infogaleria animate__animated animate__bounceInRight wow">
+            <h1>GALLERY CLEANING SERVICES</h1>
+            <p>Profit is the cleaning service company dedicated to making cleanliness accessible to everyone. Our goal is to help individuals and businesses maintain spotless environments, no matter the size, condition, or type of space. We promise to provide top-notch cleaning services that cater to your unique needs and deliver a healthy, fresh, and pristine environment every time.</p>
+            <button class="animate__animated animate__pulse animate__infinite">Join Now</button>
+        </section>
+    </div>
+</section>
+<!-- ---------------------------------VER IMAGENES -------------------------------->
+<script>
+    // funcion fancibox galeria fotos
+    Fancybox.bind('[data-fancybox="gallery"]', {    
+    });
+</script>
+
+<!-- ------------------Pricing Package (comentarios)-------------------- -->
+
+<div id="contact" class="P9 ancho">
+    <h3>PRICING PACKAGE</h3>
+    <h1>The cleaner came within the time frame.</h1>
+</div>
+
+<section>
+    <form class="contact-form" id="contact-form">
+        <h2>Contact Us</h2>
+        
+        <div class="form-correo">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required placeholder="Enter your name">
+            <span class="error-message" id="name-error"></span>
+        </div>
+        
+            <div class="form-correo">
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" required placeholder="Enter your email">
+            <span class="error-message" id="email-error"></span>
+        </div>
+        
+        <div class="form-correo">
+            <label for="message">Your Message:</label>
+            <textarea id="message" name="message" required placeholder="Enter your message" rows="5"></textarea>
+            <span class="error-message" id="message-error"></span>
+        </div>
+        
+        <div class="form-correo">
+            <button type="submit">Send Message</button>
+        </div>
+    </form>
+</section>
+
+<script>
+    document.getElementById("contact-form").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        let valid = true;
+
+        // Validación del nombre
+        const name = document.getElementById("name");
+        const nameError = document.getElementById("name-error");
+        if (name.value.trim() === "") {
+            nameError.textContent = "Name is required.";
+            valid = false;
+        } else {
+            nameError.textContent = "";
+        }
+
+        // Validación del correo electrónico
+        const email = document.getElementById("email");
+        const emailError = document.getElementById("email-error");
+        const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+        if (!emailRegex.test(email.value.trim())) {
+            emailError.textContent = "Please enter a valid email address.";
+            valid = false;
+        } else {
+            emailError.textContent = "";
+        }
+
+        // Validación del mensaje
+        const message = document.getElementById("message");
+        const messageError = document.getElementById("message-error");
+        if (message.value.trim() === "") {
+            messageError.textContent = "Message is required.";
+            valid = false;
+        } else {
+            messageError.textContent = "";
+        }
+
+        // Si todos los campos son válidos, mostrar mensaje
+        if (valid) {
+            alert("Your message has been sent!");
+        }
+    });
+</script>
+
+<!-- ------------------Learn about our latest news-------------------- -->
+<div id="Blog" class=" P10 ancho">
+    <i class="escoba fa-solid fa-broom" style="color: #279e64;"></i>
+<h3>PRICING PACKAGE</h3>
+<h1>Learn About Our Latest News From Blog</h1>
+</div>
+<section class="ancho">  
+
+    <div id="carousel" class="carousel">
+        <div id="slide-container">
+            <article class="slide" data-slideIndex="0">
+                <img src="img/blog1.jpg">
+                <div class="carousel-details">
+                    <i class="fa-solid fa-user"></i> <p>DREAMIT</p>
+                    <i class="fa-solid fa-calendar-days"></i> <p>JANUARY 7, 2024</p>
+                </div>
+                <h2>The Secret of Cleaning Your House</h2>
+                <p>It is a long established fact that a reader will be distracted by the readable content of a page.</p>
+                <div class="servicio_btn">
+                    <button>Read More</button>
+                </div>
+            </article>
+
+            <!-- Artículo 2 -->
+            <article class="slide" data-slideIndex="1">
+                <img src="img/blog2.jpg">
+                <div class="carousel-details">
+                    <i class="fa-solid fa-user"></i> <p>DREAMIT</p>
+                    <i class="fa-solid fa-calendar-days"></i> <p>JANUARY 7, 2024</p>
+                </div>
+                <h2>10 Tips for a Perfect Home Cleaning</h2>
+                <p>It is a long established fact that a reader will be distracted by the readable content of a page.</p>
+                <div class="servicio_btn">
+                    <button>Read More</button>
+                </div>
+            </article>
+
+            <!-- Artículo 3 -->
+            <article class="slide" data-slideIndex="2">
+                <img src="img/blog3.jpg">
+                <div class="carousel-details">
+                    <i class="fa-solid fa-user"></i> <p>DREAMIT</p>
+                    <i class="fa-solid fa-calendar-days"></i> <p>JANUARY 7, 2024</p>
+                </div>
+                <h2>How to Maintain a Clean Home</h2>
+                <p>It is a long established fact that a reader will be distracted by the readable content of a page.</p>
+                <div class="servicio_btn">
+                    <button>Read More</button>
+                </div>
+            </article>
+
+            <!-- Artículo 4 -->
+            <article class="slide" data-slideIndex="3">
+                <img src="img/blo4.jpg">
+                <div class="carousel-details">
+                    <i class="fa-solid fa-user"></i> <p>DREAMIT</p>
+                    <i class="fa-solid fa-calendar-days"></i> <p>JANUARY 7, 2024</p>
+                </div>
+                <h2>Why You Should Hire Professional Cleaners</h2>
+                <p>It is a long established fact that a reader will be distracted by the readable content of a page.</p>
+                <div class="servicio_btn">
+                    <button>Read More</button>
+                </div>
+            </article>
+        </div>
+
+        <!-- Controles del carrusel -->
+        <div class="raya1 slide-buttons">
+            <button id="back-button" class="arrow back"><i class="fa-solid fa-angle-left"></i></button>
+<button id="forward-button" class="arrow forward"><i class="fa-solid fa-angle-right"></i></button>
+
+        </div>
+        <div class="raya2 slide-indicators">
+            <a  class="slide-indicator active"></a>
+            <a  class="slide-indicator"></a>
+            <a  class="slide-indicator"></a>
+            <a  class="slide-indicator"></a>
+        </div>
+        
+    </div>
+
+</section>
+
+
+
+
+<!-- ------------------footer-------------------- -->
+
+<footer class="footer">
+    <div class="footer-container">
+        <!-- Logo and Description -->
+        <div class="footer-section">
+            <img src="img/LogoSinColor_Dreamit.png" alt="">
+            <p>There are many variations of the passages of Lorem Ipsum more available...</p>
+            <p>Follow Us On:</p>
+            <div class="social-links">
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">Pinterest</a>
+                <a href="#">LinkedIn</a>
+            </div>
+        </div>
+
+        <!-- Services -->
+        <div class="footer-section">
+            <h3>Services</h3>
+            <ul>
+                <li>Carpet Cleaning</li>
+                <li>Glass Cleaning</li>
+                <li>House Cleaning</li>
+                <li>Kitchen Cleaning</li>
+                <li>Office Cleaning</li>
+            </ul>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li>Offers</li>
+                <li>Features</li>
+                <li>Pricing Table</li>
+                <li>Partner</li>
+                <li>Contact Us</li>
+            </ul>
+        </div>
+
+        <!-- Corporate Office -->
+        <div class="footer-section">
+            <h3>Corporate Office</h3>
+            <p>59 Street, Rampura, Dhaka</p>
+            <p>+985-8844-000</p>
+            <p>info@example.com</p>
+            <div class="subscribe-form">
+                <input type="email" placeholder="Your Email..." class="subscribe-input">
+                <button class="subscribe-button">Subscribe</button>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+ <!-- -----------------------ANIMACION LETRA------------------------ -->
+ <script>
+    new WOW().init();
+    </script>
+    <!-- carrousel -->
+    <script src="carrousel.js"></script>
+    <!-- -----------------------BOTON MENU------------------------ -->
+    <script>
+        $("#btnmenu").click(function () {
+          $("#menu").slideToggle();
+        });
+      </script>
+
+</body>
+</html>
